@@ -72,3 +72,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
 }
 
+class PointOfInterest: NSObject, MKAnnotation{
+    var coordinate: CLLocationCoordinate2D
+    
+    //Title  and subtitle for use by selection UI
+    var title: String?
+    
+    init(location: CLLocationCoordinate2D, title:String){
+        coordinate = location
+        self.title = title
+        
+    }
+    
+    
+    
+}
+

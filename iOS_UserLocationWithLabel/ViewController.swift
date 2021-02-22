@@ -56,7 +56,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
           //map.centerCoordinate = l.coordinate
         
             x.text = String(l.coordinate.latitude)
-            z.text = String(l.coordinate.latitude)
+            y.text = String(l.coordinate.longitude)
+           
             
           let region = MKCoordinateRegion(
 

@@ -54,16 +54,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         for l in locations{
 
           //map.centerCoordinate = l.coordinate
-
+        
+            x.text = String(l.coordinate.latitude)
+            z.text = String(l.coordinate.latitude)
+            
           let region = MKCoordinateRegion(
 
             center: l.coordinate,
 
-            latitudinalMeters: 100,
+            latitudinalMeters: 400,
 
-            longitudinalMeters: 100)
+            longitudinalMeters: 400)
 
           map.setRegion(region, animated: true)
+          map.addAnnotation(PointOfInterest(location: l.coordinate, title: "here"))
+            
 
         }
 
@@ -79,7 +84,7 @@ class PointOfInterest: NSObject, MKAnnotation{
     var title: String?
     
     init(location: CLLocationCoordinate2D, title:String){
-        coordinate = location
+        self.coordinate = location
         self.title = title
         
     }

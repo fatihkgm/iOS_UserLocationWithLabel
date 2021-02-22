@@ -40,9 +40,34 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             print("Acceleromoter is not avaliable")
         }
         locationManager = CLLocationManager()
+        locationManager.delegate = self
+        
+        locationManager.requestAlwaysAuthorization()
+        
+        locationManager.startUpdatingLocation()
         
         
     }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+
+        for l in locations{
+
+          //map.centerCoordinate = l.coordinate
+
+          let region = MKCoordinateRegion(
+
+            center: l.coordinate,
+
+            latitudinalMeters: 100,
+
+            longitudinalMeters: 100)
+
+          map.setRegion(region, animated: true)
+
+        }
+
+      }
 
 
 }

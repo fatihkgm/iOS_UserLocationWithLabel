@@ -10,7 +10,7 @@ import CoreMotion
 import CoreLocation
 import MapKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var x: UILabel!
     @IBOutlet weak var y: UILabel!
@@ -39,6 +39,7 @@ class ViewController: UIViewController {
         }else{
             print("Acceleromoter is not avaliable")
         }
+        locationManager = CLLocationManager()
         
         
     }
